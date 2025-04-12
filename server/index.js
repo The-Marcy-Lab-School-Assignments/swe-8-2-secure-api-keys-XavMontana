@@ -25,7 +25,7 @@ const serveGifs = async (req, res) => {
     const data = await response.json();
     res.send(data);
   } catch (error) {
-    res.send(503).send(error);
+    res.status(503).send(error);
   }
 };
 const serveStatic = express.static(pathToDistFolder);
